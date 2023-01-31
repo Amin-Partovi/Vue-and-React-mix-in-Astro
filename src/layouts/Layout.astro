@@ -1,4 +1,7 @@
 ---
+import texts from '../texts/texts';
+
+
 export interface Props {
 	title: string;
 }
@@ -16,6 +19,10 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
+		<div class="header">
+			<h1>{texts.TITLE}</h1>
+			<img src="/favicon.svg" alt="Astro logo" class="astro-logo"/>
+		</div>
 		<slot />
 	</body>
 </html>
@@ -32,4 +39,19 @@ const { title } = Astro.props;
 		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
 			Bitstream Vera Sans Mono, Courier New, monospace;
 	}
+
+	.header{
+		display: flex;
+		justify-content: center;
+		gap: 30px;
+		width: 1200px;
+		margin: auto;
+		padding: 20px;
+		
+		
+	}
+
+	.astro-logo{
+			width: 100px;
+		}
 </style>
