@@ -1,5 +1,5 @@
 const texts = {
-  TITLE: "TO-DO APP by Astro 2.0",
+  TITLE: "mix React and Veu in Astro 2.0 project",
 };
 
 export default texts;
