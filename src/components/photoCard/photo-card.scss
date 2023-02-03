@@ -1,0 +1,12 @@
+.card {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 5px;
+  box-shadow: 0px 4px 28px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  h2 {
+    font-size: 16px;
+  }
+}
