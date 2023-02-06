@@ -1,10 +1,9 @@
 .container {
   max-width: 1200px;
-  margin: auto;
+  margin: 20px auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   gap: 30px;
- 
 
   @media screen and (max-width: 1200px) {
     grid-template-columns: 1fr 1fr 1fr 1fr;

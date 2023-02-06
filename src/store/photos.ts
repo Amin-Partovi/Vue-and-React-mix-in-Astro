@@ -1,18 +1,32 @@
 import { atom, onMount, task } from "nanostores";
 
-export const photos = atom([]);
+interface Photo {
+  albumId: number;
+  id: number;
+  title: string;
+  url: string;
+  thumbnailUrl: string;
+}
+interface FetchPhotos {
+  isLoading: boolean;
+  data: Photo[];
+}
 
-export const fetchPhotos = async () => {
-  const response = await fetch(
-    "https://jsonplaceholder.typicode.com/photos?albumId=5&_start=0&_limit=20"
-  );
-  const fetchedPhotos = await response.json();
-  console.log(fetchedPhotos);
-  return fetchedPhotos;
-};
+export const photos = atom<FetchPhotos>({ isLoading: false, data: [] });
+
 
 onMount(photos, () => {
+  photos.set({ isLoading: true, data: [] });
+
   task(async () => {
-    photos.set(await fetchPhotos());
+    try {
+      const response = await fetch(
+        "https://jsonplaceholder.typicode.com/photos?albumId=5&_start=0&_limit=20"
+      );
+
+      photos.set({ isLoading: false, data: await response.json() });
+    } catch (e) {
+      console.log(e);
+    }
   });
 });
