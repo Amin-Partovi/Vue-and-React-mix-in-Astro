@@ -1,4 +1,17 @@
-# Astro Starter Kit: Basics
+# Welcome to the Vue-and-React-mix-in-Astro!
+
+## How to run?
+`npm run dev`  
+
+## Tech Stack
+**Astro, React, Vue, SCSS**  
+
+## About the Project
+In this project components from React, Vue, Astro are integrated with each other in a single page. It is still not recommended to build a front-end project with different frameworks, but here we show how Astro makes this possible.  
+
+
+
+## Astro Starter Kit: Basics
 
 ```
 npm create astro@latest -- --template basics
